@@ -43,6 +43,16 @@ const [{ user, token}, dispatch] = useDataLayerValue();
         playlists: playlists,
     });
     });
+
+
+// Copy your discover weekly pin
+    
+   spotify.getPlaylist('37i9dQZEVXcD4ANfKjrXy7').then(response =>
+    dispatch({
+      type: "SET_DISCOVER_WEEKLY",
+      discover_weekly: response,
+    })
+    )
   }
   }, []);
 
